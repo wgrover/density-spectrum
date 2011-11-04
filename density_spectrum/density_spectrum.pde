@@ -32,6 +32,9 @@ float rho0R;
 int botbez = 180;  // Bezier control point offset
 int topbez = 80;  // Bezier control point offset
 
+String[] materials = {"Platinum", "Osmium", "Water", "Heavy water", "Asbestos"};
+float[] densities = {22.0, 23.0, 1.0, 1.1, 12.3};
+
 void setup() {
   size(1200, 700);
   background(255);
@@ -106,6 +109,34 @@ void draw() {
     textAlign(CENTER, CENTER);
     text(nf(rho, 0, 3), leftmargin + (rho-rho0L) * linelength / 0.023, line0y+20);
     rho += 0.001;
+  }
+  
+  // ADD THE MATERIAL NAMES
+  translate(leftmargin, line0y);
+  rotate(-HALF_PI);
+  textAlign(LEFT, CENTER);
+  for (int i = 0; i < materials.length; i++) {
+    if (rho0L <= densities[i] && densities[i] <= rho0R) {
+      text(materials[i], 0, (densities[i]-rho0L) * linelength / 0.023);
+    }
+  }
+  translate(-spacing, 0);
+  for (int i = 0; i < materials.length; i++) {
+    if (rho1L <= densities[i] && densities[i] <= rho1R) {
+      text(materials[i], 0, (densities[i]-rho1L) * linelength / 0.23);
+    }
+  }
+  translate(-spacing, 0);
+  for (int i = 0; i < materials.length; i++) {
+    if (rho2L <= densities[i] && densities[i] <= rho2R) {
+      text(materials[i], 0, (densities[i]-rho2L) * linelength / 2.3);
+    }
+  }
+  translate(-spacing, 0);
+  for (int i = 0; i < materials.length; i++) {
+    if (rho3L <= densities[i] && densities[i] <= rho3R) {
+      text(materials[i], 0, (densities[i]-rho3L) * linelength / 23.0);
+    }
   }
 
 }

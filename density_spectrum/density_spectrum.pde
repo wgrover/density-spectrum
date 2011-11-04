@@ -11,9 +11,9 @@ float line1y = topmargin + 1 * spacing;
 float line0y = topmargin + 0 * spacing;
 float boxheight = 10; // half box height
 float boxlength = linelength / 10 / 2; // half box length
-float box3center = 500.0;
-float box2center = 400.0;
-float box1center = 300.0;
+float box3center = 167;
+float box2center = 450;
+float box1center = 642;
 float box3left;
 float box2left;
 float box1left;
@@ -32,8 +32,13 @@ float rho0R;
 int botbez = 180;  // Bezier control point offset
 int topbez = 80;  // Bezier control point offset
 
-String[] materials = {"Platinum", "Osmium", "Water", "Heavy water", "Asbestos"};
-float[] densities = {22.0, 23.0, 1.0, 1.1, 12.3};
+//String[] materials = {"Platinum", "Osmium", "Water", "Heavy water", "Asbestos"};
+//float[] densities = {22.0, 23.0, 1.0, 1.1, 12.3};
+
+String[] materials = new String[1000];
+float[] densities = new float[1000];
+String[] filein;
+int materials_length = 0;
 
 void setup() {
   size(1200, 700);
@@ -41,6 +46,19 @@ void setup() {
   rectMode(CORNERS);
   f = loadFont("SansSerif.plain-12.vlw");
   textFont(f, 12);
+  filein = loadStrings("density_data.txt");
+  for (int i = 0; i < filein.length; i++) {
+    println(filein[i]);
+    materials[i] = split(filein[i], TAB)[0];
+    densities[i] = Float.parseFloat(split(filein[i], TAB)[1]);
+  }
+  
+  for (int i = 0; i < materials.length; i++) {
+    if (materials[i] == null) {
+      materials_length = i;
+      break;
+    }
+  }
 }
 
 void draw() {
@@ -112,28 +130,31 @@ void draw() {
   }
   
   // ADD THE MATERIAL NAMES
-  translate(leftmargin, line0y);
+  
+  fill(128);
+  
+  translate(leftmargin, line0y - 5);
   rotate(-HALF_PI);
   textAlign(LEFT, CENTER);
-  for (int i = 0; i < materials.length; i++) {
+  for (int i = 0; i < materials_length; i++) {
     if (rho0L <= densities[i] && densities[i] <= rho0R) {
       text(materials[i], 0, (densities[i]-rho0L) * linelength / 0.023);
     }
   }
   translate(-spacing, 0);
-  for (int i = 0; i < materials.length; i++) {
+  for (int i = 0; i < materials_length; i++) {
     if (rho1L <= densities[i] && densities[i] <= rho1R) {
       text(materials[i], 0, (densities[i]-rho1L) * linelength / 0.23);
     }
   }
   translate(-spacing, 0);
-  for (int i = 0; i < materials.length; i++) {
+  for (int i = 0; i < materials_length; i++) {
     if (rho2L <= densities[i] && densities[i] <= rho2R) {
       text(materials[i], 0, (densities[i]-rho2L) * linelength / 2.3);
     }
   }
   translate(-spacing, 0);
-  for (int i = 0; i < materials.length; i++) {
+  for (int i = 0; i < materials_length; i++) {
     if (rho3L <= densities[i] && densities[i] <= rho3R) {
       text(materials[i], 0, (densities[i]-rho3L) * linelength / 23.0);
     }

@@ -1,0 +1,269 @@
+Hydrogen	0.00008988
+Helium	0.0001785
+Neon	0.0008999
+Nitrogen	0.0012506
+Oxygen	0.001429
+Fluorine	0.001696
+Argon	0.0017837
+Chlorine	0.003214
+Krypton	0.003733
+Xenon	0.005887
+Radon	0.00973
+Lithium	0.534
+Potassium	0.862
+Sodium	0.971
+Rubidium	1.532
+Calcium	1.54
+Magnesium	1.738
+Phosphorus	1.82
+Beryllium	1.85
+Francium	1.87
+Caesium	1.873
+Sulphur	2.067
+Carbon	2.267
+Silicon	2.3296
+Boron	2.34
+Strontium	2.64
+Aluminium	2.698
+Scandium	2.989
+Bromine	3.122
+Barium	3.594
+Yttrium	4.469
+Titanium	4.54
+Selenium	4.809
+Iodine	4.93
+Europium	5.243
+Germanium	5.323
+Radium	5.5
+Arsenic	5.776
+Gallium	5.907
+Vanadium	6.11
+Lanthanum	6.145
+Tellurium	6.232
+Zirconium	6.506
+Antimony	6.685
+Cerium	6.77
+Praseodymium	6.773
+Ytterbium	6.965
+Astatine	7
+Neodymium	7.007
+Zinc	7.134
+Chromium	7.15
+Promethium	7.26
+Tin	7.287
+Indium	7.31
+Manganese	7.44
+Samarium	7.52
+Iron	7.874
+Gadolinium	7.895
+Terbium	8.229
+Dysprosium	8.55
+Niobium	8.57
+Cadmium	8.69
+Holmium	8.795
+Cobalt	8.86
+Nickel	8.912
+Copper	8.96
+Erbium	9.066
+Polonium	9.32
+Thulium	9.321
+Bismuth	9.807
+Lutetium	9.84
+Actinium	10.07
+Molybdenum	10.22
+Silver	10.501
+Lead	11.342
+Technetium	11.5
+Thorium	11.72
+Thallium	11.85
+Palladium	12.02
+Ruthenium	12.37
+Rhodium	12.41
+Hafnium	13.31
+Einsteinium	13.5
+Curium	13.51
+Mercury	13.5336
+Americium	13.69
+Berkelium	14.79
+Californium	15.1
+Protactinium	15.37
+Tantalum	16.654
+Rutherfordium	18.1
+Uranium	18.95
+Tungsten	19.25
+Gold	19.282
+Plutonium	19.84
+Neptunium	20.45
+Rhenium	21.02
+Platinum	21.46
+Iridium	22.56
+Osmium	22.61
+Polybutylene	0.6
+Polymethylpentene	0.83
+Ethylene-propylene	0.86
+Propylene	0.91
+LDPE	0.91
+HDPE	0.96
+Polybutene	0.915
+Natural rubber	0.91
+Butyl rubber	0.92
+Styrene-butadiene	0.93
+Polystyrene	1.05
+Polyacrylonitrile	1.17
+Polyvinyl acetate	1.19
+Polycarbonate	1.2
+Polychloroprene rubber	1.23
+Polysulphone	1.24
+Polyethylene terephtalate	1.36
+PVC	1.38
+PTFE Teflon	2.27
+Water	1
+Red blood cell (RBC)	1.11
+Malaria-infected RBC	1.1
+Lymphocyte	1.08
+Apoptotic lymphocyte	1.09
+Trichlorotrifluoroethane	1.564
+Trichlorobenzene	1.454
+Dioxane	1.0336
+Methoxyethanol	0.9646
+Acetic Acid	1.0491
+Acetone	0.78458
+Acetonitrile	0.7822
+"Alcohol, ethyl"	0.78506
+"Alcohol, methyl"	0.78651
+"Alcohol, propyl"	0.79996
+Ammonia (aqua)	0.82335
+Analine	1.01893
+Benzene	0.87381
+Benzil	1.07964
+Brine	1.23
+Butyric Acid	0.959
+Butane	0.59909
+n-Butyl Acetate	0.8796
+n-Butyl Alcohol	0.8097
+n-Butyl Chloride	0.8862
+Caproic acid	0.92106
+Carbolic acid	0.9563
+Carbon disulfide	1.26097
+Carbon tetrachloride	1.58439
+Carene	0.85699
+Castor oil	0.95614
+Chloride	1.55988
+Chlorobenzene	1.1058
+Chloroform	1.4892
+Chloroform	1.46473
+Citric acid	1.65951
+Coconut oil	0.92427
+Cotton seed oil	0.92587
+Cresol	1.02358
+Creosote	1.06683
+"Crude oil, 48° API"	0.79
+"Crude oil, 40° API"	0.825
+"Crude oil, 35.6° API"	0.847
+"Crude oil, 32.6° API"	0.862
+"Crude oil, California"	0.915
+"Crude oil, Mexican"	0.973
+"Crude oil, Texas"	0.873
+Cumene	0.86019
+Cyclohexane	0.7785
+Cyclopentane	0.7454
+Decane	0.72628
+Diethyl ether	0.714
+Dichlorobenzene	1.3058
+Dichloromethane	1.326
+Diethylene glycol	1.12
+Dichloromethane	1.326
+Dimethyl Acetamide	0.9415
+Dimethylformamide	0.9487
+Dodecane	0.75463
+Ethane	0.57026
+Ether	0.07272
+Ethylamine	0.68078
+Ethyl Acetate	0.9006
+Ethyl Alcohol	0.7892
+Ethyl Ether	0.7133
+Ethylene Dichloride	1.253
+Ethylene glycol	1.09678
+R12 refrigerant	1.31095
+Formaldehyde	0.81214
+Freon 11	1.49
+Freon 21	1.37
+Fuel oil	0.89013
+Furan	1.41603
+Furforol	1.15493
+"Gasoline, natural"	0.71122
+"Gasoline, Vehicle"	0.73722
+Gas oils	0.89
+Glycerin	1.25937
+Glyme	0.8691
+Glycerol	1.1261
+Heptane	0.6795
+Hexane	0.65483
+Hexanol	0.81053
+Hexene	0.67117
+Hydrazine	0.79452
+Iodine	4.92728
+Ionene	0.93227
+Isobutyl Alcohol	0.8016
+Iso-Octane	0.6919
+Isopropyl Alcohol	0.7854
+Isopropyl Myristate	0.8532
+Kerosene	0.81715
+Linolenic Acid	0.89864
+Linseed oil	0.92907
+Methane	0.46454
+Methanol	0.7913
+Methyl Isoamyl Ketone	0.888
+Methyl Isobutyl Ketone	0.8008
+Methyl n-Propyl Ketone	0.8082
+Methyl t-Butyl Ether	0.7405
+N-Methylpyrrolidone	1.0304
+Methyl Ethyl Ketone	0.8049
+MEK	0.80252
+Naphtha	0.66477
+"Naphtha, wood"	0.95951
+Napthalene	0.82015
+Ocimene	0.79772
+Octane	0.91786
+Olive oil	0.86
+Palmitic Acid	0.85058
+Pentane	0.6262
+Pentane	0.62482
+Petroleum Ether	0.64
+Gasoline	0.73722
+Phenol	1.07228
+Phosgene	1.37759
+Phytadiene	0.82335
+Pinene	0.85699
+Propane	0.58307
+"Propane, R-290"	0.49353
+Propanol	0.80413
+Propylene Carbonate	1.2006
+Propylene	0.51435
+Propyl Alcohol	0.8037
+Propylene glycol	0.96527
+Pyridine	0.97873
+Pyrrole	0.96591
+Rape seed oil	0.92
+Resorcinol	1.26866
+Rosin oil	0.98
+Sabiname	0.81214
+Sea water	1.02518
+Silane	0.71763
+Sodium Hydroxide	1.25
+Sorbaldehyde	0.89543
+Soya bean oil	0.926
+Stearic Acid	0.89063
+Sulphuric Acid	1.839
+Sunflower oil	0.92
+Styrene	0.90344
+Terpinene	0.84738
+Tetrahydrofuran	0.888
+Toluene	0.8669
+Toluene	0.86227
+Triethylamine	0.7276
+Trifluoroacetic Acid	1.489
+Turpentine	0.8682
+Sea water	1.02198
+Whale oil	0.925
+o-Xylene	0.8802

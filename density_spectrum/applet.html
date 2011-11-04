@@ -34,7 +34,7 @@
 	<b>The density spectrum</b> by William Grover.  Click and drag the 1x, 10x, and 100x scales to move around.
       </p>
     <div id="content">
-      <div id="density_spectrum_6_container">
+      <div id="@@sketch@@_container">
 
 	<!-- This version plays nicer with older browsers, 
 	     but requires JavaScript to be enabled. 
@@ -46,10 +46,10 @@
 	  /* <![CDATA[ */
 
 	  var attributes = { 
-            code: 'density_spectrum_6.class',
-            archive: 'density_spectrum_6.jar',
-            width: 1200, 
-            height: 850,
+            code: '@@sketch@@.class',
+            archive: '@@archive@@',
+            width: @@width@@, 
+            height: @@height@@,
           };
           var parameters = { 
             image: 'loading.gif',
@@ -63,13 +63,13 @@
         
 	<noscript> <div>
 	  <!--[if !IE]> -->
-	  <object classid="java:density_spectrum_6.class" 
+	  <object classid="java:@@sketch@@.class" 
             	  type="application/x-java-applet"
-            	  archive="density_spectrum_6.jar"
-            	  width="1200" height="850"
+            	  archive="@@archive@@"
+            	  width="@@width@@" height="@@height@@"
             	  standby="Loading Processing software..." >
             
-	    <param name="archive" value="density_spectrum_6.jar" />
+	    <param name="archive" value="@@archive@@" />
 	    
 	    <param name="mayscript" value="true" />
 	    <param name="scriptable" value="true" />
@@ -85,11 +85,11 @@
 		 http://java.sun.com/javase/6/webnotes/install/jre/autodownload.html -->
 	    <object classid="clsid:8AD9C840-044E-11D1-B3E9-00805F499D93"
 		    codebase="http://java.sun.com/update/1.6.0/jinstall-6u20-windows-i586.cab"
-		    width="1200" height="850"
+		    width="@@width@@" height="@@height@@"
 		    standby="Loading Processing software..."  >
 	      
-	      <param name="code" value="density_spectrum_6" />
-	      <param name="archive" value="density_spectrum_6.jar" />
+	      <param name="code" value="@@sketch@@" />
+	      <param name="archive" value="@@archive@@" />
 	      
 	      <param name="mayscript" value="true" />
 	      <param name="scriptable" value="true" />

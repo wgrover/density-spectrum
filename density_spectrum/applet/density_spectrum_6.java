@@ -1,3 +1,22 @@
+import processing.core.*; 
+import processing.xml.*; 
+
+import java.applet.*; 
+import java.awt.Dimension; 
+import java.awt.Frame; 
+import java.awt.event.MouseEvent; 
+import java.awt.event.KeyEvent; 
+import java.awt.event.FocusEvent; 
+import java.awt.Image; 
+import java.io.*; 
+import java.net.*; 
+import java.text.*; 
+import java.util.*; 
+import java.util.zip.*; 
+import java.util.regex.*; 
+
+public class density_spectrum_6 extends PApplet {
+
 int xmax = 1200;
 int ymax = 850;
 PFont f;
@@ -44,7 +63,7 @@ float[] densities = new float[1000];
 String[] filein;
 int materials_length = 0;
 
-void setup() {
+public void setup() {
   smooth();
   size(1200, 850);
   background(255);
@@ -68,7 +87,7 @@ void setup() {
   }
 }
 
-void draw() {
+public void draw() {
   background(255);
   
   
@@ -110,7 +129,7 @@ void draw() {
   
   stroke(255);
   
-  fill(255*.50);          // BOTTOM
+  fill(255*.50f);          // BOTTOM
   beginShape();
   vertex(leftmargin-20, line3y+55);
   vertex(leftmargin-20, line3y-150);
@@ -118,7 +137,7 @@ void draw() {
   vertex(leftmargin+20+linelength, line3y+55);
   endShape(CLOSE);
 
-  fill(255*0.65);
+  fill(255*0.65f);
   beginShape();
   vertex(box3left, line3y+65);  // this one is different
   vertex(box3left, line3y-165);
@@ -130,7 +149,7 @@ void draw() {
   vertex(box3right, line3y+65);  // this one is different
   endShape(CLOSE);
   
-  fill(255*0.80);
+  fill(255*0.80f);
   beginShape();
   vertex(box2left, line2y+45);
   vertex(box2left, line2y-165);
@@ -142,7 +161,7 @@ void draw() {
   vertex(box2right, line2y+45);
   endShape(CLOSE);
   
-  fill(255*0.90);         // TOP
+  fill(255*0.90f);         // TOP
   beginShape();
   vertex(box1left, line1y+45);
   vertex(box1left, line1y-165);
@@ -166,13 +185,13 @@ void draw() {
   textAlign(LEFT, CENTER);
   for (int i = 0; i < materials_length; i++) {
     if (rho0L <= densities[i] && densities[i] <= rho0R) {
-      text(materials[i], 0, (densities[i]-rho0L) * linelength / 0.023);
+      text(materials[i], 0, (densities[i]-rho0L) * linelength / 0.023f);
     }
   }
   translate(-spacing, 0);
   for (int i = 0; i < materials_length; i++) {
     if (rho1L <= densities[i] && densities[i] <= rho1R) {
-      text(materials[i], 0, (densities[i]-rho1L) * linelength / 0.23);
+      text(materials[i], 0, (densities[i]-rho1L) * linelength / 0.23f);
     }
   }
   
@@ -180,13 +199,13 @@ void draw() {
   translate(-spacing, 0);
   for (int i = 0; i < materials_length; i++) {
     if (rho2L <= densities[i] && densities[i] <= rho2R) {
-      text(materials[i], 0, (densities[i]-rho2L) * linelength / 2.3);
+      text(materials[i], 0, (densities[i]-rho2L) * linelength / 2.3f);
     }
   }
   translate(-spacing, 0);
   for (int i = 0; i < materials_length; i++) {
     if (rho3L <= densities[i] && densities[i] <= rho3R) {
-      text(materials[i], 0, (densities[i]-rho3L) * linelength / 23.0);
+      text(materials[i], 0, (densities[i]-rho3L) * linelength / 23.0f);
     }
   }
   
@@ -212,11 +231,11 @@ void draw() {
   
   fill(0);
   textFont(fbig, 30);
-  text("1000x", xmax*.96, line0y - 120);
-  text("100x", xmax*.96, line1y - 120);
+  text("1000x", xmax*.96f, line0y - 120);
+  text("100x", xmax*.96f, line1y - 120);
   fill(0);
-  text("10x", xmax*.96, line2y - 120);
-  text("1x", xmax*.96, line3y - 120);
+  text("10x", xmax*.96f, line2y - 120);
+  text("1x", xmax*.96f, line3y - 120);
   
   fill(0);
   textFont(fbold, 12);
@@ -236,38 +255,38 @@ void draw() {
   
   rho2L = (box3left - leftmargin) * 23 / linelength;
   rho2R = (box3right - leftmargin) * 23 / linelength;
-  rho = ceil(rho2L * 10) / 10.0;
-  while (rho < ceil(rho2R * 10) / 10.0) {
-    line(leftmargin + (rho-rho2L) * linelength / 2.3, line2y, leftmargin + (rho-rho2L) * linelength / 2.3, line2y+10);
+  rho = ceil(rho2L * 10) / 10.0f;
+  while (rho < ceil(rho2R * 10) / 10.0f) {
+    line(leftmargin + (rho-rho2L) * linelength / 2.3f, line2y, leftmargin + (rho-rho2L) * linelength / 2.3f, line2y+10);
     textAlign(CENTER, CENTER);
-    text(nf(rho, 0, 1), leftmargin + (rho-rho2L) * linelength / 2.3, line2y+20);
-    rho += 0.1;
+    text(nf(rho, 0, 1), leftmargin + (rho-rho2L) * linelength / 2.3f, line2y+20);
+    rho += 0.1f;
   }
   
   stroke(0);
   fill(0);
-  rho1L = (box2left - leftmargin) * 2.3 / linelength + rho2L;
-  rho1R = (box2right - leftmargin) * 2.3 / linelength + rho2L;
-  rho = ceil(rho1L * 100) / 100.0;
-  while (rho < ceil(rho1R * 100) / 100.0) {
-    line(leftmargin + (rho-rho1L) * linelength / 0.23, line1y, leftmargin + (rho-rho1L) * linelength / 0.23, line1y+10);
+  rho1L = (box2left - leftmargin) * 2.3f / linelength + rho2L;
+  rho1R = (box2right - leftmargin) * 2.3f / linelength + rho2L;
+  rho = ceil(rho1L * 100) / 100.0f;
+  while (rho < ceil(rho1R * 100) / 100.0f) {
+    line(leftmargin + (rho-rho1L) * linelength / 0.23f, line1y, leftmargin + (rho-rho1L) * linelength / 0.23f, line1y+10);
     textAlign(CENTER, CENTER);
-    text(nf(rho, 0, 2), leftmargin + (rho-rho1L) * linelength / 0.23, line1y+20);
-    rho += 0.01;
+    text(nf(rho, 0, 2), leftmargin + (rho-rho1L) * linelength / 0.23f, line1y+20);
+    rho += 0.01f;
   }
 
-  rho0L = (box1left - leftmargin) * 0.23 / linelength + rho1L;
-  rho0R = (box1right - leftmargin) * 0.23 / linelength + rho1L;
-  rho = ceil(rho0L * 1000) / 1000.0;
-  while (rho < ceil(rho0R * 1000) / 1000.0) {
-    line(leftmargin + (rho-rho0L) * linelength / 0.023, line0y, leftmargin + (rho-rho0L) * linelength / 0.023, line0y+10);
+  rho0L = (box1left - leftmargin) * 0.23f / linelength + rho1L;
+  rho0R = (box1right - leftmargin) * 0.23f / linelength + rho1L;
+  rho = ceil(rho0L * 1000) / 1000.0f;
+  while (rho < ceil(rho0R * 1000) / 1000.0f) {
+    line(leftmargin + (rho-rho0L) * linelength / 0.023f, line0y, leftmargin + (rho-rho0L) * linelength / 0.023f, line0y+10);
     textAlign(CENTER, CENTER);
-    text(nf(rho, 0, 3), leftmargin + (rho-rho0L) * linelength / 0.023, line0y+20);
-    rho += 0.001;
+    text(nf(rho, 0, 3), leftmargin + (rho-rho0L) * linelength / 0.023f, line0y+20);
+    rho += 0.001f;
   }
   
   
-  strokeWeight(3.0);
+  strokeWeight(3.0f);
   stroke(255,0,0);
   line(166,150,213,150);
   line(166,150,166,160);
@@ -280,7 +299,7 @@ void draw() {
   text("(0.001 g/mL)", (166+213)/2, 122);
 }
 
-void mouseDragged() {
+public void mouseDragged() {
   println(mouseX);
   if (line3y - 150 < mouseY && mouseY < line3y + 50) {
     box3center = mouseX;
@@ -293,8 +312,12 @@ void mouseDragged() {
   }
 }
 
-void mouseClicked() {
+public void mouseClicked() {
   if (mouseX < 20 && mouseY < 20) {
     save("out.png");
+  }
+}
+  static public void main(String args[]) {
+    PApplet.main(new String[] { "--bgcolor=#FFFFFF", "density_spectrum_6" });
   }
 }

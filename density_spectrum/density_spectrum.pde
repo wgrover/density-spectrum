@@ -1,6 +1,6 @@
-boolean box1 = true;   // top
-boolean box2 = true;
-boolean box3 = true;
+boolean box1 = false;   // top
+boolean box2 = false;
+boolean box3 = false;
 boolean box4 = true;   // bottom
 
 
@@ -319,10 +319,12 @@ void draw() {
 
   strokeWeight(3.0);
   stroke(255, 0, 0);
-  line(166, 150, 213, 150);
-  line(166, 150, 166, 160);
-  line(        213, 150, 213, 160);
-  line((166+213)/2, 150, (166+213)/2, 140);
+  if (box1) {
+    line(166, 150, 213, 150);
+    line(166, 150, 166, 160);
+    line(        213, 150, 213, 160);
+    line((166+213)/2, 150, (166+213)/2, 140);
+  }
   fill(255, 0, 0);
   textFont(fmedium, 18);
   if (box1) {

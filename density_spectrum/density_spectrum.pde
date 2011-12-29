@@ -1,6 +1,6 @@
-boolean box1 = false;   // top
-boolean box2 = false;
-boolean box3 = false;
+boolean box1 = true;   // top
+boolean box2 = true;
+boolean box3 = true;
 boolean box4 = true;   // bottom
 
 

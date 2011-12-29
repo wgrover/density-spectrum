@@ -1,7 +1,7 @@
-boolean box1 = false;
-boolean box2 = false;
-boolean box3 = false;
-boolean box4 = true;
+boolean box1 = true;   // top
+boolean box2 = true;
+boolean box3 = true;
+boolean box4 = false;   // bottom
 
 
 int xmax = 1200;
@@ -178,32 +178,43 @@ void draw() {
   translate(leftmargin, line0y - 5);
   rotate(-HALF_PI);
   textAlign(LEFT, CENTER);
+  if (box1) {
   for (int i = 0; i < materials_length; i++) {
     if (rho0L <= densities[i] && densities[i] <= rho0R) {
       text(materials[i], 0, (densities[i]-rho0L) * linelength / 0.023);
     }
   }
+  }
   translate(-spacing, 0);
+  if (box2) {
   for (int i = 0; i < materials_length; i++) {
     if (rho1L <= densities[i] && densities[i] <= rho1R) {
       text(materials[i], 0, (densities[i]-rho1L) * linelength / 0.23);
     }
   }
+  }
   
   fill(0);
   translate(-spacing, 0);
+  if (box3) {
   for (int i = 0; i < materials_length; i++) {
     if (rho2L <= densities[i] && densities[i] <= rho2R) {
       text(materials[i], 0, (densities[i]-rho2L) * linelength / 2.3);
     }
   }
+  }
+  
   translate(-spacing, 0);
+  if (box4) {
   for (int i = 0; i < materials_length; i++) {
     if (rho3L <= densities[i] && densities[i] <= rho3R) {
       text(materials[i], 0, (densities[i]-rho3L) * linelength / 23.0);
     }
   }
+  }
   
+  
+ 
   
   rotate(HALF_PI);
   translate(-leftmargin, -line3y + 5);
@@ -211,12 +222,19 @@ void draw() {
   noFill();
   
   stroke(0);
+  if (box4) {
   line(leftmargin, line3y, leftmargin + linelength, line3y); // line 3
+  }
+  if (box3) {
   line(leftmargin, line2y, leftmargin + linelength, line2y); // line 2
+  }
   stroke(0);
+  if (box2) {
   line(leftmargin, line1y, leftmargin + linelength, line1y); // line 1
+  }
+  if (box1) {
   line(leftmargin, line0y, leftmargin + linelength, line0y); // line 0
-  
+  }
 
   
   fill(0);
@@ -226,36 +244,50 @@ void draw() {
   
   fill(0);
   textFont(fbig, 30);
+  if (box1) {
   text("1000x", xmax*.96, line0y - 120);
+  }
+  if (box2) {
   text("100x", xmax*.96, line1y - 120);
+  }
   fill(0);
+  if (box3) {
   text("10x", xmax*.96, line2y - 120);
+  }
+  if (box4) {
   text("1x", xmax*.96, line3y - 120);
+  }
   
   fill(0);
   textFont(fbold, 12);
+  if (box4) {
   text("Density (g/mL)",leftmargin + linelength/2, ymax-35);
+  }
   
   stroke(0);
   fill(0);
   rho3L = 0;
   rho3R = 23;
   rho = floor(rho3L);
+  if (box4) {
   while (rho <= ceil(rho3R)) {
     line(leftmargin + rho * linelength / 23, line3y, leftmargin + rho * linelength / 23, line3y+10);
     textAlign(CENTER, CENTER);
     text(nf(rho, 0, 0), leftmargin + rho * linelength / 23, line3y+20);
     rho += 1;
   }
+  }
   
   rho2L = (box3left - leftmargin) * 23 / linelength;
   rho2R = (box3right - leftmargin) * 23 / linelength;
   rho = ceil(rho2L * 10) / 10.0;
+  if (box3) {
   while (rho < ceil(rho2R * 10) / 10.0) {
     line(leftmargin + (rho-rho2L) * linelength / 2.3, line2y, leftmargin + (rho-rho2L) * linelength / 2.3, line2y+10);
     textAlign(CENTER, CENTER);
     text(nf(rho, 0, 1), leftmargin + (rho-rho2L) * linelength / 2.3, line2y+20);
     rho += 0.1;
+  }
   }
   
   stroke(0);
@@ -263,21 +295,25 @@ void draw() {
   rho1L = (box2left - leftmargin) * 2.3 / linelength + rho2L;
   rho1R = (box2right - leftmargin) * 2.3 / linelength + rho2L;
   rho = ceil(rho1L * 100) / 100.0;
+  if (box2) {
   while (rho < ceil(rho1R * 100) / 100.0) {
     line(leftmargin + (rho-rho1L) * linelength / 0.23, line1y, leftmargin + (rho-rho1L) * linelength / 0.23, line1y+10);
     textAlign(CENTER, CENTER);
     text(nf(rho, 0, 2), leftmargin + (rho-rho1L) * linelength / 0.23, line1y+20);
     rho += 0.01;
   }
+  }
 
   rho0L = (box1left - leftmargin) * 0.23 / linelength + rho1L;
   rho0R = (box1right - leftmargin) * 0.23 / linelength + rho1L;
   rho = ceil(rho0L * 1000) / 1000.0;
+  if (box1) {
   while (rho < ceil(rho0R * 1000) / 1000.0) {
     line(leftmargin + (rho-rho0L) * linelength / 0.023, line0y, leftmargin + (rho-rho0L) * linelength / 0.023, line0y+10);
     textAlign(CENTER, CENTER);
     text(nf(rho, 0, 3), leftmargin + (rho-rho0L) * linelength / 0.023, line0y+20);
     rho += 0.001;
+  }
   }
   
   
@@ -289,9 +325,11 @@ void draw() {
   line((166+213)/2,150, (166+213)/2, 140);
   fill(255,0,0);
   textFont(fmedium, 18);
+  if (box1) {
   text("Current resolution of", (166+213)/2, 78);
   text("density spectrometry", (166+213)/2, 100);
   text("(0.001 g/mL)", (166+213)/2, 122);
+  }
 }
 
 void mouseDragged() {

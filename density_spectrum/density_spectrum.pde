@@ -1,7 +1,7 @@
 boolean box1 = true;   // top
 boolean box2 = true;
 boolean box3 = true;
-boolean box4 = false;   // bottom
+boolean box4 = true;   // bottom
 
 
 int xmax = 1200;
@@ -65,7 +65,7 @@ void setup() {
     materials[i] = split(filein[i], TAB)[0];
     densities[i] = Float.parseFloat(split(filein[i], TAB)[1]);
   }
-  
+
   for (int i = 0; i < materials.length; i++) {
     if (materials[i] == null) {
       materials_length = i;
@@ -76,259 +76,259 @@ void setup() {
 
 void draw() {
   background(255);
-  
-  
-  
+
+
+
   strokeWeight(4);
-  
-  fill(0,0,0);
-  
+
+  fill(0, 0, 0);
+
   box3left = box3center - boxlength;
   box3right = box3center + boxlength;
   box2left = box2center - boxlength;
   box2right = box2center + boxlength;
   box1left = box1center - boxlength;
   box1right = box1center + boxlength;
-  
-  
-//  rect(box3left, line3y-topboxheight, box3right, line3y+botboxheight);
-//  rect(box2left, line2y-topboxheight, box2right, line2y+botboxheight);
-//  rect(box1left, line1y-topboxheight, box1right, line1y+botboxheight);
-//  
-//  noFill();
-//
-// 
-//  bezier(box3left,  line3y-topboxheight, box3left,  line3y-topboxheight-botbez, leftmargin,            line2y+topbez, leftmargin,            line2y);
-//  bezier(box3right, line3y-topboxheight, box3right, line3y-topboxheight-botbez, leftmargin+linelength, line2y+topbez, leftmargin+linelength, line2y);
-//  bezier(box2left,  line2y-topboxheight, box2left,  line2y-topboxheight-botbez, leftmargin,            line1y+topbez, leftmargin,            line1y);
-//  bezier(box2right, line2y-topboxheight, box2right, line2y-topboxheight-botbez, leftmargin+linelength, line1y+topbez, leftmargin+linelength, line1y);
-//  bezier(box1left,  line1y-topboxheight, box1left,  line1y-topboxheight-botbez, leftmargin,            line0y+topbez, leftmargin,            line0y);
-//  bezier(box1right, line1y-topboxheight, box1right, line1y-topboxheight-botbez, leftmargin+linelength, line0y+topbez, leftmargin+linelength, line0y);
-//  
-//  line(box3left,  line3y-topboxheight, leftmargin,            line2y);
-//  line(box3right, line3y-topboxheight, leftmargin+linelength, line2y);
-//  line(box2left,  line2y-topboxheight, leftmargin,            line1y);
-//  line(box2right, line2y-topboxheight, leftmargin+linelength, line1y);
-//  line(box1left,  line1y-topboxheight, leftmargin,            line0y);
-//  line(box1right, line1y-topboxheight, leftmargin+linelength, line0y);
-  
-//  noStroke();
-  
+
+
+  //  rect(box3left, line3y-topboxheight, box3right, line3y+botboxheight);
+  //  rect(box2left, line2y-topboxheight, box2right, line2y+botboxheight);
+  //  rect(box1left, line1y-topboxheight, box1right, line1y+botboxheight);
+  //  
+  //  noFill();
+  //
+  // 
+  //  bezier(box3left,  line3y-topboxheight, box3left,  line3y-topboxheight-botbez, leftmargin,            line2y+topbez, leftmargin,            line2y);
+  //  bezier(box3right, line3y-topboxheight, box3right, line3y-topboxheight-botbez, leftmargin+linelength, line2y+topbez, leftmargin+linelength, line2y);
+  //  bezier(box2left,  line2y-topboxheight, box2left,  line2y-topboxheight-botbez, leftmargin,            line1y+topbez, leftmargin,            line1y);
+  //  bezier(box2right, line2y-topboxheight, box2right, line2y-topboxheight-botbez, leftmargin+linelength, line1y+topbez, leftmargin+linelength, line1y);
+  //  bezier(box1left,  line1y-topboxheight, box1left,  line1y-topboxheight-botbez, leftmargin,            line0y+topbez, leftmargin,            line0y);
+  //  bezier(box1right, line1y-topboxheight, box1right, line1y-topboxheight-botbez, leftmargin+linelength, line0y+topbez, leftmargin+linelength, line0y);
+  //  
+  //  line(box3left,  line3y-topboxheight, leftmargin,            line2y);
+  //  line(box3right, line3y-topboxheight, leftmargin+linelength, line2y);
+  //  line(box2left,  line2y-topboxheight, leftmargin,            line1y);
+  //  line(box2right, line2y-topboxheight, leftmargin+linelength, line1y);
+  //  line(box1left,  line1y-topboxheight, leftmargin,            line0y);
+  //  line(box1right, line1y-topboxheight, leftmargin+linelength, line0y);
+
+  //  noStroke();
+
   stroke(255);
-  
+
   if (box4) {
-  fill(255*.50);          // BOTTOM
-  beginShape();
-  vertex(leftmargin-20, line3y+55);
-  vertex(leftmargin-20, line3y-150);
-  vertex(leftmargin+20+linelength, line3y-150);
-  vertex(leftmargin+20+linelength, line3y+55);
-  endShape(CLOSE);
+    fill(255*.50);          // BOTTOM
+    beginShape();
+    vertex(leftmargin-20, line3y+55);
+    vertex(leftmargin-20, line3y-150);
+    vertex(leftmargin+20+linelength, line3y-150);
+    vertex(leftmargin+20+linelength, line3y+55);
+    endShape(CLOSE);
   }
 
   if (box3) {
-  fill(255*0.65);
-  beginShape();
-  vertex(box3left, line3y+65);  // this one is different
-  vertex(box3left, line3y-165);
-  vertex(leftmargin-20, line3y-165);
-  vertex(leftmargin-20, line2y-150);
-  vertex(leftmargin+20+linelength, line2y-150);
-  vertex(leftmargin+20+linelength, line3y-165);
-  vertex(box3right, line3y-165);
-  vertex(box3right, line3y+65);  // this one is different
-  endShape(CLOSE);
+    fill(255*0.65);
+    beginShape();
+    vertex(box3left, line3y+65);  // this one is different
+    vertex(box3left, line3y-165);
+    vertex(leftmargin-20, line3y-165);
+    vertex(leftmargin-20, line2y-150);
+    vertex(leftmargin+20+linelength, line2y-150);
+    vertex(leftmargin+20+linelength, line3y-165);
+    vertex(box3right, line3y-165);
+    vertex(box3right, line3y+65);  // this one is different
+    endShape(CLOSE);
   }
-  
+
   if (box2) {
-  fill(255*0.80);
-  beginShape();
-  vertex(box2left, line2y+45);
-  vertex(box2left, line2y-165);
-  vertex(leftmargin-20, line2y-165);
-  vertex(leftmargin-20, line1y-150);
-  vertex(leftmargin+20+linelength, line1y-150);
-  vertex(leftmargin+20+linelength, line2y-165);
-  vertex(box2right, line2y-165);
-  vertex(box2right, line2y+45);
-  endShape(CLOSE);
+    fill(255*0.80);
+    beginShape();
+    vertex(box2left, line2y+45);
+    vertex(box2left, line2y-165);
+    vertex(leftmargin-20, line2y-165);
+    vertex(leftmargin-20, line1y-150);
+    vertex(leftmargin+20+linelength, line1y-150);
+    vertex(leftmargin+20+linelength, line2y-165);
+    vertex(box2right, line2y-165);
+    vertex(box2right, line2y+45);
+    endShape(CLOSE);
   }
-  
+
   if (box1) {
-  fill(255*0.90);         // TOP
-  beginShape();
-  vertex(box1left, line1y+45);
-  vertex(box1left, line1y-165);
-  vertex(leftmargin-20, line1y-165);
-  vertex(leftmargin-20, line0y-150);
-  vertex(leftmargin+20+linelength, line0y-150);
-  vertex(leftmargin+20+linelength, line1y-165);
-  vertex(box1right, line1y-165);
-  vertex(box1right, line1y+45);
-  endShape(CLOSE);
+    fill(255*0.90);         // TOP
+    beginShape();
+    vertex(box1left, line1y+45);
+    vertex(box1left, line1y-165);
+    vertex(leftmargin-20, line1y-165);
+    vertex(leftmargin-20, line0y-150);
+    vertex(leftmargin+20+linelength, line0y-150);
+    vertex(leftmargin+20+linelength, line1y-165);
+    vertex(box1right, line1y-165);
+    vertex(box1right, line1y+45);
+    endShape(CLOSE);
   }
-  
+
   strokeWeight(1);
-  
+
   // ADD THE MATERIAL NAMES
-  
+
   fill(0);
   textFont(f, 12);
-  
+
   translate(leftmargin, line0y - 5);
   rotate(-HALF_PI);
   textAlign(LEFT, CENTER);
   if (box1) {
-  for (int i = 0; i < materials_length; i++) {
-    if (rho0L <= densities[i] && densities[i] <= rho0R) {
-      text(materials[i], 0, (densities[i]-rho0L) * linelength / 0.023);
+    for (int i = 0; i < materials_length; i++) {
+      if (rho0L <= densities[i] && densities[i] <= rho0R) {
+        text(materials[i], 0, (densities[i]-rho0L) * linelength / 0.023);
+      }
     }
-  }
   }
   translate(-spacing, 0);
   if (box2) {
-  for (int i = 0; i < materials_length; i++) {
-    if (rho1L <= densities[i] && densities[i] <= rho1R) {
-      text(materials[i], 0, (densities[i]-rho1L) * linelength / 0.23);
+    for (int i = 0; i < materials_length; i++) {
+      if (rho1L <= densities[i] && densities[i] <= rho1R) {
+        text(materials[i], 0, (densities[i]-rho1L) * linelength / 0.23);
+      }
     }
-  }
-  }
-  
-  fill(0);
-  translate(-spacing, 0);
-  if (box3) {
-  for (int i = 0; i < materials_length; i++) {
-    if (rho2L <= densities[i] && densities[i] <= rho2R) {
-      text(materials[i], 0, (densities[i]-rho2L) * linelength / 2.3);
-    }
-  }
-  }
-  
-  translate(-spacing, 0);
-  if (box4) {
-  for (int i = 0; i < materials_length; i++) {
-    if (rho3L <= densities[i] && densities[i] <= rho3R) {
-      text(materials[i], 0, (densities[i]-rho3L) * linelength / 23.0);
-    }
-  }
-  }
-  
-  
- 
-  
-  rotate(HALF_PI);
-  translate(-leftmargin, -line3y + 5);
-  
-  noFill();
-  
-  stroke(0);
-  if (box4) {
-  line(leftmargin, line3y, leftmargin + linelength, line3y); // line 3
-  }
-  if (box3) {
-  line(leftmargin, line2y, leftmargin + linelength, line2y); // line 2
-  }
-  stroke(0);
-  if (box2) {
-  line(leftmargin, line1y, leftmargin + linelength, line1y); // line 1
-  }
-  if (box1) {
-  line(leftmargin, line0y, leftmargin + linelength, line0y); // line 0
   }
 
-  
+  fill(0);
+  translate(-spacing, 0);
+  if (box3) {
+    for (int i = 0; i < materials_length; i++) {
+      if (rho2L <= densities[i] && densities[i] <= rho2R) {
+        text(materials[i], 0, (densities[i]-rho2L) * linelength / 2.3);
+      }
+    }
+  }
+
+  translate(-spacing, 0);
+  if (box4) {
+    for (int i = 0; i < materials_length; i++) {
+      if (rho3L <= densities[i] && densities[i] <= rho3R) {
+        text(materials[i], 0, (densities[i]-rho3L) * linelength / 23.0);
+      }
+    }
+  }
+
+
+
+
+  rotate(HALF_PI);
+  translate(-leftmargin, -line3y + 5);
+
+  noFill();
+
+  stroke(0);
+  if (box4) {
+    line(leftmargin, line3y, leftmargin + linelength, line3y); // line 3
+  }
+  if (box3) {
+    line(leftmargin, line2y, leftmargin + linelength, line2y); // line 2
+  }
+  stroke(0);
+  if (box2) {
+    line(leftmargin, line1y, leftmargin + linelength, line1y); // line 1
+  }
+  if (box1) {
+    line(leftmargin, line0y, leftmargin + linelength, line0y); // line 0
+  }
+
+
   fill(0);
   strokeWeight(1);
-  
+
   textAlign(RIGHT, CENTER);
-  
+
   fill(0);
   textFont(fbig, 30);
   if (box1) {
-  text("1000x", xmax*.96, line0y - 120);
+    text("1000x", xmax*.96, line0y - 120);
   }
   if (box2) {
-  text("100x", xmax*.96, line1y - 120);
+    text("100x", xmax*.96, line1y - 120);
   }
   fill(0);
   if (box3) {
-  text("10x", xmax*.96, line2y - 120);
+    text("10x", xmax*.96, line2y - 120);
   }
   if (box4) {
-  text("1x", xmax*.96, line3y - 120);
+    text("1x", xmax*.96, line3y - 120);
   }
-  
+
   fill(0);
   textFont(fbold, 12);
   if (box4) {
-  text("Density (g/mL)",leftmargin + linelength/2, ymax-35);
+    text("Density (g/mL)", leftmargin + linelength/2, ymax-35);
   }
-  
+
   stroke(0);
   fill(0);
   rho3L = 0;
   rho3R = 23;
   rho = floor(rho3L);
   if (box4) {
-  while (rho <= ceil(rho3R)) {
-    line(leftmargin + rho * linelength / 23, line3y, leftmargin + rho * linelength / 23, line3y+10);
-    textAlign(CENTER, CENTER);
-    text(nf(rho, 0, 0), leftmargin + rho * linelength / 23, line3y+20);
-    rho += 1;
+    while (rho <= ceil (rho3R)) {
+      line(leftmargin + rho * linelength / 23, line3y, leftmargin + rho * linelength / 23, line3y+10);
+      textAlign(CENTER, CENTER);
+      text(nf(rho, 0, 0), leftmargin + rho * linelength / 23, line3y+20);
+      rho += 1;
+    }
   }
-  }
-  
+
   rho2L = (box3left - leftmargin) * 23 / linelength;
   rho2R = (box3right - leftmargin) * 23 / linelength;
   rho = ceil(rho2L * 10) / 10.0;
   if (box3) {
-  while (rho < ceil(rho2R * 10) / 10.0) {
-    line(leftmargin + (rho-rho2L) * linelength / 2.3, line2y, leftmargin + (rho-rho2L) * linelength / 2.3, line2y+10);
-    textAlign(CENTER, CENTER);
-    text(nf(rho, 0, 1), leftmargin + (rho-rho2L) * linelength / 2.3, line2y+20);
-    rho += 0.1;
+    while (rho < ceil (rho2R * 10) / 10.0) {
+      line(leftmargin + (rho-rho2L) * linelength / 2.3, line2y, leftmargin + (rho-rho2L) * linelength / 2.3, line2y+10);
+      textAlign(CENTER, CENTER);
+      text(nf(rho, 0, 1), leftmargin + (rho-rho2L) * linelength / 2.3, line2y+20);
+      rho += 0.1;
+    }
   }
-  }
-  
+
   stroke(0);
   fill(0);
   rho1L = (box2left - leftmargin) * 2.3 / linelength + rho2L;
   rho1R = (box2right - leftmargin) * 2.3 / linelength + rho2L;
   rho = ceil(rho1L * 100) / 100.0;
   if (box2) {
-  while (rho < ceil(rho1R * 100) / 100.0) {
-    line(leftmargin + (rho-rho1L) * linelength / 0.23, line1y, leftmargin + (rho-rho1L) * linelength / 0.23, line1y+10);
-    textAlign(CENTER, CENTER);
-    text(nf(rho, 0, 2), leftmargin + (rho-rho1L) * linelength / 0.23, line1y+20);
-    rho += 0.01;
-  }
+    while (rho < ceil (rho1R * 100) / 100.0) {
+      line(leftmargin + (rho-rho1L) * linelength / 0.23, line1y, leftmargin + (rho-rho1L) * linelength / 0.23, line1y+10);
+      textAlign(CENTER, CENTER);
+      text(nf(rho, 0, 2), leftmargin + (rho-rho1L) * linelength / 0.23, line1y+20);
+      rho += 0.01;
+    }
   }
 
   rho0L = (box1left - leftmargin) * 0.23 / linelength + rho1L;
   rho0R = (box1right - leftmargin) * 0.23 / linelength + rho1L;
   rho = ceil(rho0L * 1000) / 1000.0;
   if (box1) {
-  while (rho < ceil(rho0R * 1000) / 1000.0) {
-    line(leftmargin + (rho-rho0L) * linelength / 0.023, line0y, leftmargin + (rho-rho0L) * linelength / 0.023, line0y+10);
-    textAlign(CENTER, CENTER);
-    text(nf(rho, 0, 3), leftmargin + (rho-rho0L) * linelength / 0.023, line0y+20);
-    rho += 0.001;
+    while (rho < ceil (rho0R * 1000) / 1000.0) {
+      line(leftmargin + (rho-rho0L) * linelength / 0.023, line0y, leftmargin + (rho-rho0L) * linelength / 0.023, line0y+10);
+      textAlign(CENTER, CENTER);
+      text(nf(rho, 0, 3), leftmargin + (rho-rho0L) * linelength / 0.023, line0y+20);
+      rho += 0.001;
+    }
   }
-  }
-  
-  
+
+
   strokeWeight(3.0);
-  stroke(255,0,0);
-  line(166,150,213,150);
-  line(166,150,166,160);
-  line(        213,150,213,160);
-  line((166+213)/2,150, (166+213)/2, 140);
-  fill(255,0,0);
+  stroke(255, 0, 0);
+  line(166, 150, 213, 150);
+  line(166, 150, 166, 160);
+  line(        213, 150, 213, 160);
+  line((166+213)/2, 150, (166+213)/2, 140);
+  fill(255, 0, 0);
   textFont(fmedium, 18);
   if (box1) {
-  text("Current resolution of", (166+213)/2, 78);
-  text("density spectrometry", (166+213)/2, 100);
-  text("(0.001 g/mL)", (166+213)/2, 122);
+    text("Current resolution of", (166+213)/2, 78);
+    text("density spectrometry", (166+213)/2, 100);
+    text("(0.001 g/mL)", (166+213)/2, 122);
   }
 }
 
@@ -350,3 +350,4 @@ void mouseClicked() {
     save("out.png");
   }
 }
+

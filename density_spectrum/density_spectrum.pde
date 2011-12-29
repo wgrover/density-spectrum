@@ -1,3 +1,9 @@
+boolean box1 = false;
+boolean box2 = false;
+boolean box3 = false;
+boolean box4 = true;
+
+
 int xmax = 1200;
 int ymax = 850;
 PFont f;
@@ -110,6 +116,7 @@ void draw() {
   
   stroke(255);
   
+  if (box4) {
   fill(255*.50);          // BOTTOM
   beginShape();
   vertex(leftmargin-20, line3y+55);
@@ -117,7 +124,9 @@ void draw() {
   vertex(leftmargin+20+linelength, line3y-150);
   vertex(leftmargin+20+linelength, line3y+55);
   endShape(CLOSE);
+  }
 
+  if (box3) {
   fill(255*0.65);
   beginShape();
   vertex(box3left, line3y+65);  // this one is different
@@ -129,7 +138,9 @@ void draw() {
   vertex(box3right, line3y-165);
   vertex(box3right, line3y+65);  // this one is different
   endShape(CLOSE);
+  }
   
+  if (box2) {
   fill(255*0.80);
   beginShape();
   vertex(box2left, line2y+45);
@@ -141,7 +152,9 @@ void draw() {
   vertex(box2right, line2y-165);
   vertex(box2right, line2y+45);
   endShape(CLOSE);
+  }
   
+  if (box1) {
   fill(255*0.90);         // TOP
   beginShape();
   vertex(box1left, line1y+45);
@@ -153,6 +166,7 @@ void draw() {
   vertex(box1right, line1y-165);
   vertex(box1right, line1y+45);
   endShape(CLOSE);
+  }
   
   strokeWeight(1);
   
